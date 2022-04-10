@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #12172b;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 40px;
+  color: white;
+}
+
+.heading {
+  position: relative;
+  font-size: 60px;
+  color: #0e3742;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,#0008);
+   line-height: 0.70em;
+   outline: none;
+   animation: animate 5s linear infinite;
+   
+  
+}
+
+@keyframes animate{
+  0%,18%,20%,50.1%,60%, 65.1%, 80%, 90%,92% {
+    color: #0e3742;
+    text-shadow: none ;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90% , 92.1% ,100%{
+    color: #fff ;
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 160px #03bcf4;
+  }
+}
+
+.heading span {
+  font-style: italic;
+  font-size: 30px;
+}
+
+.profiles  {
+  padding-top: 60px;
+  display: flex;
+  flex:1;
+  justify-content: space-around;
+  margin: 20px 80px;
+}
+
+.profiles-2  {
+  padding-top: 3%;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  margin: 20px  80px;
+}
+
+.profile {
+  
+  flex-basis: 260px;
+}
+
+
+.profile .profile-img {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  /* filter: grayscale(100%);
+  cursor: pointer;
+  transition: 400ms; */
+}
+
+
+
+
+
+.user-name {
+  margin-top: 30px;
+   font-size: 35px; 
+  
+   background: linear-gradient(90deg,  #b90bf3,  #ff00c4, #eb4d4d,  #ff00f3);
+  background-size:  400%; 
+   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animateuser 30s linear infinite; 
+}
+
+.btn{
+  margin-bottom: 20px;
+  font-size:  1.5rem;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em solid ;
+  padding: 0.15em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  position: relative;
+}
+
+.btn::before{
+  pointer-events: none;
+content: '';
+position: absolute;
+background: var(--clr-neon);
+top: 120%;
+left: 0;
+width: 100%;
+height: 100%;
+transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+filter: blur(1em);
+opacity: 0.7;
+}
+
+.btn::after
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+.btn:hover, .btn:focus{
+  background: var(--clr-neon);
+  color: var(--clr-bg);
+  text-shadow: 0;
+}
+
+.btn:hover::before,
+.btn:focus::before {
+  opacity: 1;
+}
+.btn:hover::after,
+.btn:focus::after {
+  opacity: 1;
+}
+
+
+
+
+.profile  h5 {
+  font-size: 18px;
+  padding-bottom: 15px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: #ccc;
+  
+  animation: animateRoll 1s linear infinite;
+  
+}
+@keyframes animateuser{
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+
+@keyframes animateRoll {
+  0%{
+      color:#fff ;
+      
+      
+        text-shadow: 0 0 10px #00b3ff;
+  }
+ 
+}
+
+
+
+
+.profile p {
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+
+
+@media only screen and (max-width: 1150px) {
+  .profiles  {
+    flex-direction: column;
+  }
+
+  .profiles-2  {
+    flex-direction: column;
+  }
+
+  .profile {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+}
+
+@media only screen and (max-width: 900px) {
+  .heading {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+  }
+
+  .heading span {
+    font-size: 15px;
+  }
+
+  .profiles {
+    margin: 20px 0;
+  }
+  .profiles-2{
+    margin: 20px 0;
+  }
+  
+  .profile p {
+    padding-top: 40px;
+    margin: 20px 10px 80px 10px;
+  }
+}
